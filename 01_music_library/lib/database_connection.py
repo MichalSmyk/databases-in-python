@@ -8,14 +8,14 @@ import os
 # If the below seems too complex right now, that's OK.
 # That's why we have provided it!
 class DatabaseConnection:
-    DATABASE_NAME = "DEFAULT_MAKERS_PROJECT" # <-- CHANGE THIS!
+    DATABASE_NAME = "music_library" # <-- CHANGE THIS!
 
     # This method connects to PostgreSQL using the psycopg library. We connect
     # to localhost and select the database name given in argument.
     def connect(self):
         try:
             self.connection = psycopg.connect(
-                f"postgresql://localhost/{self.DATABASE_NAME}",
+                f"postgresql://micha:yourpassword@localhost/{self.DATABASE_NAME}",
                 row_factory=dict_row)
         except psycopg.OperationalError:
             raise Exception(f"Couldn't connect to the database {self.DATABASE_NAME}! " \
