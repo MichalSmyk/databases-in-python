@@ -9,3 +9,11 @@ def test_construct_with_fields():
     assert album.title == "Dark Side"
     assert album.release_year == 1995 
     assert album.artist_id == 2
+
+"""
+We can format albums to strings nicely
+"""
+
+def test_ablums_format_nicely():
+    album = Album(1, "Dark Side", 1995, 2)
+    assert str(album) == "Album(1, Dark Side, 1995, 2)"
