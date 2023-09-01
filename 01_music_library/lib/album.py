@@ -4,3 +4,6 @@ class Album:
         self.title = title 
         self.release_year = release_year 
         self.artist_id = artist_id 
+
+    def __repr__(self):
+        return f"Album({self.id}, {self.title}, {self.release_year}, {self.artist_id})"
